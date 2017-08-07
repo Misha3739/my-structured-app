@@ -38,8 +38,15 @@ export  class RecipeService
     return this.recipies.slice();
   }
 
+  getRecipe(id: number)
+  {
+    return this.recipies.slice()[id];
+  }
+
   addIngredientToShoppingList(ingredient: Ingredient[])
   {
     this.shoppingListService.addIngredients(ingredient);
   }
+
+
 }
