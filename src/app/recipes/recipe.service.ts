@@ -66,5 +66,10 @@ export  class RecipeService
     this.shoppingListService.addIngredients(ingredient);
   }
 
+  setRecipes(recipes: Recipe[])
+  {
+    this.recipies = recipes;
+    this.recipesChanged.next(this.recipies.slice());
+  }
 
 }
