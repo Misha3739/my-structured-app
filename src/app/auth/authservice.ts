@@ -36,4 +36,9 @@ export class Authservice {
 
     return this.token;
   }
+
+  isAuthenticated()
+  {
+    return this.token != null && this.token != '';
+  }
 }
