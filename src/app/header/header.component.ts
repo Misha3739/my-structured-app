@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor(private  storageService: DataStorage) { }
 
   ngOnInit() {
-    this.storageService.getRecipes();
+    //this.storageService.getRecipes();
   }
 
   onSaveData()
