@@ -30,6 +30,10 @@ export class HeaderComponent implements OnInit {
     {
       this.storageService.getRecipes();
     }
-
+    
+  onLogOut()
+  {
+    this.authService.logOut();
+  }
 
 }
