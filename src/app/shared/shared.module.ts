@@ -10,7 +10,8 @@ import {DropdownDirective} from "./dropdown.directive";
     DropdownDirective
   ],
   exports: [
-    DropdownDirective
+    DropdownDirective,
+    CommonModule
   ]
 })
 export class SharedModule { }
