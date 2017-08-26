@@ -20,6 +20,9 @@ const  recipeRoutes: Routes = [{path: '',component: RecipesComponent,children:[
   declarations: [
 
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers : [
+    AuthGuard
+  ]
 })
 export class RecipesRoutingModule { }
