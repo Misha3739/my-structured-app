@@ -12,7 +12,11 @@ export class HeaderComponent implements OnInit {
 
   @Output('FeatureSelected') featureSelected = new EventEmitter<string>();
 
-  constructor(private  storageService: DataStorage,private authService: Authservice) { }
+  authService: Authservice;
+
+  constructor(private  storageService: DataStorage,private authServiceInj: Authservice) {
+    this.authService = authServiceInj;
+  }
 
   ngOnInit() {
 
