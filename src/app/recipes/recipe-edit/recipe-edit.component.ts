@@ -106,7 +106,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  getFormControls(controlGroup: string) 
+  getFormControls(controlGroup: string)
   {
     return   (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
