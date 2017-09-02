@@ -7,6 +7,8 @@ import {Authservice} from "../auth/authservice";
 import {DataStorage} from "../shared/data-storage";
 import {ShoppingListService} from "../shopping-list/shoppinglist.service";
 import {RecipeService} from "../recipes/recipe.service";
+import {AuthInterceptor} from "../shared/auth-interceptor";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -26,6 +28,12 @@ import {RecipeService} from "../recipes/recipe.service";
     ShoppingListService,
     RecipeService,
     DataStorage,
-    Authservice]
+    Authservice,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+    ]
 })
 export class CoreModule { }
