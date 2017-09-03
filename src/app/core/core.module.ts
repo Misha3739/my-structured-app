@@ -9,6 +9,7 @@ import {ShoppingListService} from "../shopping-list/shoppinglist.service";
 import {RecipeService} from "../recipes/recipe.service";
 import {AuthInterceptor} from "../shared/auth-interceptor";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {LoggingInterceptor} from "../shared/logging-interceptor";
 
 @NgModule({
   imports: [
@@ -32,6 +33,11 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptor,
       multi: true
     }
     ]
