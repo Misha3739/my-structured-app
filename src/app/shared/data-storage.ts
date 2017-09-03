@@ -13,21 +13,12 @@ export class DataStorage {
 
   storeRecipes()
   {
-    const token = this.authService.getToken();
-   /*return this.httpClient.put(
-     'https://ng-recipe-book-3e445.firebaseio.com/recipes.json',
-     this.recipeService.getRecipes(),
-     {
-       observe: 'body',
-       params: new HttpParams().set('auth', token)
-     });*/
    const  request = new HttpRequest(
      'PUT',
      'https://ng-recipe-book-3e445.firebaseio.com/recipes.json',
      this.recipeService.getRecipes(),
      {
-       reportProgress: true,
-       params: new HttpParams().set('auth', token)
+       reportProgress: true
      });
     return this.httpClient.request(request);
   }
@@ -38,8 +29,7 @@ export class DataStorage {
 
     this.httpClient.get<Recipe[]>('https://ng-recipe-book-3e445.firebaseio.com/recipes.json',
     {
-      observe: 'body',
-        params: new HttpParams().set('auth', token)
+      observe: 'body'
     }).
       map(
 
